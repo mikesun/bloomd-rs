@@ -1,0 +1,545 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pr",
+				"Printf"
+			],
+			[
+				"NUM_",
+				"NUM_WORKERS"
+			],
+			[
+				"N",
+				"NUM_USERS"
+			],
+			[
+				"NUM_USER",
+				"NUM_USERS_PER_CONTACT"
+			],
+			[
+				"contact",
+				"contact_hash"
+			],
+			[
+				"ins",
+				"insertUserContacts"
+			],
+			[
+				"PutU",
+				"PutUint64"
+			],
+			[
+				"NUM",
+				"NUM_CONTACTS_PER_USER"
+			],
+			[
+				"con",
+				"continue"
+			],
+			[
+				"priori",
+				"priority(…)"
+			],
+			[
+				"println",
+				"println!(…)"
+			],
+			[
+				"pri",
+				"priorities_total"
+			],
+			[
+				"part",
+				"part_two(…)"
+			],
+			[
+				"split",
+				"split_whitespace()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"term",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"termin",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"cop",
+				"Copilot: Sign In"
+			],
+			[
+				"pack control  in",
+				"Package Control: Install Package"
+			],
+			[
+				"lsp lo",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"lsp p",
+				"LSP: Toggle Diagnostics Panel"
+			],
+			[
+				"lsp pa",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"gopl",
+				"Preferences: LSP-gopls Settings"
+			],
+			[
+				"lsp",
+				"LSP: Toggle Diagnostics Panel"
+			],
+			[
+				"toggle in",
+				"LSP: Toggle Inlay Hints"
+			],
+			[
+				"satisf",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"package control:dep",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"go build",
+				"Build With: Go - Run"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"z",
+				"Build With: Zig - Run File"
+			],
+			[
+				"g",
+				"Gist: Create Private Gist"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ls",
+				"Preferences: LSP Settings"
+			],
+			[
+				"lsp ",
+				"Preferences: LSP Settings"
+			],
+			[
+				"temrinal",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"termi",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"list pac",
+				"Package Control: List Packages"
+			],
+			[
+				"terminus",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"git push",
+				"Git: Push Current Branch"
+			],
+			[
+				"git comm",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"run",
+				"Build With: RustEnhanced - Run"
+			],
+			[
+				"build",
+				"Build With: RustEnhanced - Run (with args)..."
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"qui",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"gitpus",
+				"Git: Push Current Branch"
+			],
+			[
+				"git commit",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"Enhan",
+				"Build With: RustEnhanced - Run (with args)..."
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"",
+				"Build With: RustEnhanced - Run (with args)..."
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 566.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/msun/src/bloom-rs"
+	],
+	"file_history":
+	[
+		"/Users/msun/src/goplay/friend-finder/pkg/cmd/gendata.go",
+		"/Users/msun/src/ziglings/README.md",
+		"/Users/msun/src/goplay/friend-finder/schema.sql",
+		"/Users/msun/src/ziglings/exercises/022_errors2.zig",
+		"/Users/msun/src/ziglings/exercises/020_quiz3.zig",
+		"/Users/msun/src/rust/chat/src/lib.rs",
+		"/Users/msun/src/rust/chat/src/bin/client.rs",
+		"/Users/msun/src/aoc-2022/src/bin/day05.rs",
+		"/Users/msun/src/zig/hello-world/src/main.zig",
+		"/Users/msun/src/ziglings/exercises/021_errors.zig",
+		"/Users/msun/src/ziglings/exercises/019_functions2.zig",
+		"/Users/msun/src/ziglings/exercises/016_for2.zig",
+		"/Users/msun/src/ziglings/exercises/015_for.zig",
+		"/Users/msun/src/ziglings/exercises/018_functions.zig",
+		"/Users/msun/src/mikesun.github.io/index.html",
+		"/Users/msun/src/mikesun.github.io/style.css",
+		"/Users/msun/src/ziglings/exercises/017_quiz2.zig",
+		"/Users/msun/src/ziglings/exercises/012_while2.zig",
+		"/Users/msun/src/ziglings/exercises/011_while.zig",
+		"/Users/msun/src/ziglings/exercises/001_hello.zig",
+		"/Users/msun/src/ziglings/exercises/065_builtins2.zig",
+		"/Users/msun/src/ziglings/build.zig",
+		"/Users/msun/src/ziglings/exercises/008_quiz.zig",
+		"/Users/msun/src/ziglings/exercises/054_manypointers.zig",
+		"/Users/msun/src/aoc-2021/go/day01/main.go",
+		"/Users/msun/src/ziglings/exercises/014_while4.zig",
+		"/Users/msun/src/ziglings/exercises/013_while3.zig",
+		"/Users/msun/src/ziglings/exercises/009_if.zig",
+		"/Users/msun/src/ziglings/exercises/010_if2.zig",
+		"/Users/msun/src/ziglings/exercises/007_strings2.zig",
+		"/Users/msun/src/ziglings/exercises/005_arrays2.zig",
+		"/Users/msun/src/ziglings/exercises/006_strings.zig",
+		"/Users/msun/src/ziglings/exercises/004_arrays.zig",
+		"/Users/msun/src/ziglings/exercises/003_assignment.zig",
+		"/Users/msun/src/ziglings/exercises/002_std.zig",
+		"/Users/msun/Library/Application Support/Sublime Text/Packages/User/Gist.sublime-settings",
+		"/var/folders/j8/8fzgs9pj41z_glqnz7qshxfm0000gn/T/208baa93cdcdc8cef8a6016c02663276-macos_setup.md",
+		"/Users/msun/Library/Application Support/Sublime Text/Packages/Gist/Gist.sublime-settings",
+		"/Users/msun/src/zig/hello-world/build.zig",
+		"/Users/msun/src/rust/chat/src/bin/server.rs",
+		"/Users/msun/src/aoc-2021/go/day05/main.go",
+		"/Users/msun/src/rust/chat/Cargo.toml",
+		"/Users/msun/src/dotfiles/install.sh",
+		"/Users/msun/src/aoc-2022/.devcontainer/devcontainer.json",
+		"/Users/msun/src/rust/.devcontainer/devcontainer.json",
+		"/Users/msun/src/rust/.devcontainer/Dockerfile",
+		"/Users/msun/src/rasmus.nvim/lua/rasmus/colors.lua",
+		"/Users/msun/src/aoc-2022/src/bin/day04.rs",
+		"/Users/msun/Downloads/Mike Sun(mike@msun-2.io)/Computing/Rust.md",
+		"/Users/msun/src/aoc-2022/src/bin/day02.rs",
+		"/Users/msun/src/aoc-2022/input/day03.input.txt",
+		"/Users/msun/src/aoc-2022/input/day02.sample.txt",
+		"/Users/msun/src/aoc-2022/input/day02.input.txt",
+		"/Users/msun/src/aoc-2022/input/day01.input.txt",
+		"/Users/msun/src/aoc-2022/src/bin/day01.rs",
+		"/Users/msun/src/aoc-2022/input/day01.sample.txt",
+		"/Users/msun/Library/Application Support/Sublime Text/Packages/newterm/readme.md"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".",
+									"selector": "source.go"
+								}
+							],
+							"copilot.completion._is_saving": false,
+							"copilot.completion.is_visible": false,
+							"copilot.completion.is_visible_panel_completions": false,
+							"copilot.completion.is_waiting_completion": false,
+							"copilot.completion.is_waiting_panel_completions": false,
+							"copilot.completion.original_layout": null,
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/msun/src/bloom-rs/README.md",
+							"syntax": "Packages/MarkdownEditing/syntaxes/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 439.0
+	},
+	"output.Terminus":
+	{
+		"height": 495.0
+	},
+	"output.diagnostics":
+	{
+		"height": 643.0
+	},
+	"output.exec":
+	{
+		"height": 531.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 115.0
+	},
+	"output.golang_build":
+	{
+		"height": 541.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bloom-rs.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
