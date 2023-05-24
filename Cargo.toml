@@ -1,0 +1,16 @@
+[package]
+name = "bloom-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bitvec = "1"
+siphasher = "0.3"
+
+[[bin]]
+name = "bloomd"
+path = "src/main.rs"
+
+[lib]
+name = "bloom"
+path = "src/lib/lib.rs"
