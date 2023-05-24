@@ -25,9 +25,6 @@ use std::hash::{Hash, Hasher};
 
 /// Bloom filter data structure.
 pub struct BloomFilter {
-    // Number of bits in filter
-    num_bits: usize,
-
     // Number of hash functions
     num_hash_functions: usize,
 
@@ -45,7 +42,6 @@ impl BloomFilter {
         let k = calc_k(num_elements, m);
 
         BloomFilter {
-            num_bits: m,
             num_hash_functions: k,
             bits: bitvec![u8, Lsb0; 0; m],
         }
@@ -53,7 +49,7 @@ impl BloomFilter {
 
     /// Returns size in bytes of the Bloom filter's bit vector.
     pub fn size(&self) -> usize {
-        self.num_bits / 8
+        self.bits.len() / 8
     }
 
     /// Insert an item into the Bloom filter.
@@ -87,7 +83,7 @@ impl BloomFilter {
     fn calc_bit<T: Hash>(&self, item: &T, hash_func_num: usize) -> usize {
         let mut hasher = SipHasher::new_with_keys(hash_func_num as u64, 0);
         item.hash(&mut hasher);
-        hasher.finish() as usize % self.num_bits
+        hasher.finish() as usize % self.bits.len()
     }
 }
 
