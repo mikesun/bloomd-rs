@@ -31,7 +31,7 @@ pub struct BloomFilter {
     // Number of hash functions
     num_hash_functions: usize,
 
-    /// Bit vector storing Bloom filter
+    // Bit vector storing Bloom filter
     bits: BitVec<u8>,
 }
 
@@ -51,6 +51,7 @@ impl BloomFilter {
         }
     }
 
+    /// Returns size in bytes of the Bloom filter's bit vector.
     pub fn size(&self) -> usize {
         self.num_bits / 8
     }
@@ -82,9 +83,9 @@ impl BloomFilter {
         true
     }
 
-    /// Hash with given seed
-    fn calc_bit<T: Hash>(&self, item: &T, hash_index: usize) -> usize {
-        let mut hasher = SipHasher::new_with_keys(hash_index as u64, 0);
+    /// Calcuate index of bit for given item and hashing function number
+    fn calc_bit<T: Hash>(&self, item: &T, hash_func_num: usize) -> usize {
+        let mut hasher = SipHasher::new_with_keys(hash_func_num as u64, 0);
         item.hash(&mut hasher);
         hasher.finish() as usize % self.num_bits
     }
@@ -127,6 +128,12 @@ mod tests {
     }
 
     #[test]
+    fn size() {
+        let bloom = BloomFilter::new(100_000, 0.01);
+        assert_eq!(bloom.size(), 119813);
+    }
+
+    #[test]
     fn contains_true() {
         let mut bloom = BloomFilter::new(100_000, 0.01);
         bloom.insert(&"hi");
@@ -134,7 +141,7 @@ mod tests {
     }
 
     #[test]
-    fn contains_failse() {
+    fn contains_false() {
         let mut bloom = BloomFilter::new(100_000, 0.01);
         bloom.insert(&"hi");
         assert!(!bloom.contains(&"yo"));
