@@ -79,7 +79,7 @@ impl BloomFilter {
         true
     }
 
-    /// Calcuate index of bit for given item and hashing function number
+    /// Calculate index of bit for given item and hashing function number
     fn calc_bit<T: Hash>(&self, item: &T, hash_func_num: usize) -> usize {
         let mut hasher = SipHasher::new_with_keys(hash_func_num as u64, 0);
         item.hash(&mut hasher);
