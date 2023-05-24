@@ -25,19 +25,13 @@ use std::hash::{Hash, Hasher};
 
 /// Bloom filter data structure.
 pub struct BloomFilter {
-    /// Expected number of elements
-    pub n: u32,
+    // Number of bits in filter
+    num_bits: usize,
 
-    /// False positive rate
-    pub f: f32,
+    // Number of hash functions
+    num_hash_functions: usize,
 
-    /// Number of bits in filter
-    pub m: u32,
-
-    /// Number of hash functions
-    pub k: u32,
-
-    /// Bit vector
+    /// Bit vector storing Bloom filter
     bits: BitVec<u8>,
 }
 
@@ -46,17 +40,19 @@ impl BloomFilter {
     /// be added to the Bloom filter and the target `false_positive_rate`.
     ///
     /// [`BloomFilter`]: BloomFilter
-    pub fn new(num_elements: u32, false_positive_rate: f32) -> BloomFilter {
+    pub fn new(num_elements: usize, false_positive_rate: f32) -> BloomFilter {
         let m = calc_m(num_elements, false_positive_rate);
         let k = calc_k(num_elements, m);
 
         BloomFilter {
-            n: num_elements,
-            f: false_positive_rate,
-            m,
-            k,
-            bits: bitvec![u8, Lsb0; 0; m as usize],
+            num_bits: m,
+            num_hash_functions: k,
+            bits: bitvec![u8, Lsb0; 0; m],
         }
+    }
+
+    pub fn size(&self) -> usize {
+        self.num_bits / 8
     }
 
     /// Insert an item into the Bloom filter.
@@ -65,8 +61,9 @@ impl BloomFilter {
     /// functions on *`x`*, and for each resulting hash, set the corresponding slot of `A`
     /// to 1.
     pub fn insert<T: Hash>(&mut self, item: &T) {
-        for i in 0..self.k {
-            self.bits.set(hash(item, i) % self.m as usize, true);
+        for i in 0..self.num_hash_functions {
+            let b = self.calc_bit(item, i);
+            self.bits.set(b, true);
         }
     }
 
@@ -77,27 +74,20 @@ impl BloomFilter {
     /// slots of *`A`* equals `0`, the lookup reports the item as `Not Contained`; otherwise
     /// it reports the item as `Contained`.
     pub fn contains<T: Hash>(&self, item: &T) -> bool {
-        for i in 0..self.k {
-            if !(*self
-                .bits
-                .get(hash(item, i) % self.m as usize)
-                .expect("bitarray not allocated"))
-            {
+        for i in 0..self.num_hash_functions {
+            if !(self.bits[self.calc_bit(item, i)]) {
                 return false;
             }
         }
         true
     }
-}
 
-/// Hash with given seed
-fn hash<T: Hash + ?Sized>(t: &T, seed: u32) -> usize {
-    let mut hasher = SipHasher::new_with_keys(seed.into(), 0);
-    t.hash(&mut hasher);
-    hasher
-        .finish()
-        .try_into()
-        .expect("type conversion from u64 to usize failed")
+    /// Hash with given seed
+    fn calc_bit<T: Hash>(&self, item: &T, hash_index: usize) -> usize {
+        let mut hasher = SipHasher::new_with_keys(hash_index as u64, 0);
+        item.hash(&mut hasher);
+        hasher.finish() as usize % self.num_bits
+    }
 }
 
 /// Calculate the appropriate size in bits of the Bloom filter, `m`, given
@@ -105,9 +95,9 @@ fn hash<T: Hash + ?Sized>(t: &T, seed: u32) -> usize {
 /// target false positive rate, respectively.
 ///
 /// *`(-nln(f))/ln(2)^2`*
-fn calc_m(n: u32, f: f32) -> u32 {
+fn calc_m(n: usize, f: f32) -> usize {
     // https://en.wikipedia.org/wiki/Bloom_filter#Optimal_number_of_hash_functions
-    (-f.ln() * (n as f32) / 2_f32.ln().powf(2_f32)) as u32
+    (-f.ln() * (n as f32) / 2_f32.ln().powf(2_f32)) as usize
 }
 
 /// Calculate the number of hash functions to use, `k`, given `n` and `m`, the expected
@@ -115,9 +105,9 @@ fn calc_m(n: u32, f: f32) -> u32 {
 /// filter.
 ///
 /// *`(mln(2)/n)`*
-fn calc_k(n: u32, m: u32) -> u32 {
+fn calc_k(n: usize, m: usize) -> usize {
     // https://en.wikipedia.org/wiki/Bloom_filter#Optimal_number_of_hash_functions
-    ((m as f32 * 2_f32.ln()) / n as f32) as u32
+    ((m as f32 * 2_f32.ln()) / n as f32) as usize
 }
 
 #[cfg(test)]
