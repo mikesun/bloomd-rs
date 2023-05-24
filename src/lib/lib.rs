@@ -109,7 +109,11 @@ fn calc_k(n: usize, m: usize) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use crate::{calc_k, calc_m, BloomFilter};
+    use crate::*;
+
+    fn check_sync<T: Sync>(_t: &T) {}
+
+    fn check_send<T: Send>(_t: &T) {}
 
     #[test]
     fn m() {
@@ -141,5 +145,12 @@ mod tests {
         let mut bloom = BloomFilter::new(100_000, 0.01);
         bloom.insert(&"hi");
         assert!(!bloom.contains(&"yo"));
+    }
+
+    #[test]
+    fn thread_safe() {
+        let b = BloomFilter::new(100_000, 0.01);
+        check_sync(&b);
+        check_send(&b);
     }
 }
