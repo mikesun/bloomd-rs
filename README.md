@@ -2,6 +2,21 @@
 
 A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a space-efficient, probabilistic data structure that is used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not. Thus, they are useful for situations where the query answer is expected to be "not a member" most of the time. Elements can be added to the set, but not removed.
 
+## Example usage
+
+```rust
+use bloom::BloomFilter;
+
+fn main() {
+    let mut bloom = BloomFilter::new(100_000, 0.01);
+
+    bloom.insert(&"hi");
+    assert!(bloom.contains(&"hi"));
+
+    assert!(!bloom.contains(&"yo"));
+}
+```
+
 ## Algorithm
 
 Bloom filter parameters:
