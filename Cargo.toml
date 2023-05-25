@@ -3,14 +3,20 @@ name = "bloom-rs"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
-bitvec = "1"
-siphasher = "0.3"
-
 [[bin]]
-name = "bloomd"
-path = "src/main.rs"
+name = "bloomd-server"
+path = "src/server.rs"
 
 [lib]
 name = "bloom"
 path = "src/lib/lib.rs"
+
+[dependencies]
+bitvec = "1"
+siphasher = "0.3"
+tonic = "0.9"
+prost = "0.11"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+
+[build-dependencies]
+tonic-build = "0.9"
