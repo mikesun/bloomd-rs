@@ -1,12 +1,12 @@
 use bloom::BloomFilter;
 use bloomd::bloomd_server::{Bloomd, BloomdServer};
 use bloomd::{ContainsRequest, ContainsResponse, InsertRequest, InsertResponse};
-use std::sync::{Arc, RwLock};
+use parking_lot::RwLock;
 use tonic::{transport::Server, Request, Response, Status};
 
 #[derive(Debug)]
 pub struct BloomdService {
-    bloom_filter: Arc<RwLock<BloomFilter>>,
+    bloom_filter: RwLock<BloomFilter>,
 }
 
 pub mod bloomd {
@@ -21,10 +21,7 @@ impl Bloomd for BloomdService {
     ) -> Result<Response<InsertResponse>, Status> {
         println!("Got a request: {:?}", req);
 
-        match self.bloom_filter.write() {
-            Ok(mut bf) => bf.insert(&req.get_ref().item),
-            Err(_) => return Err(Status::internal("something bad happened")),
-        };
+        self.bloom_filter.write().insert(&req.get_ref().item);
         Ok(Response::new(bloomd::InsertResponse {}))
     }
 
@@ -34,13 +31,8 @@ impl Bloomd for BloomdService {
     ) -> Result<Response<ContainsResponse>, Status> {
         println!("Got a request: {:?}", req);
 
-        let res = match self.bloom_filter.read() {
-            Ok(bf) => bf.contains(&req.get_ref().item),
-            Err(_) => return Err(Status::internal("something bad happened")),
-        };
-
         Ok(Response::new(bloomd::ContainsResponse {
-            contains_item: res,
+            contains_item: self.bloom_filter.read().contains(&req.get_ref().item),
         }))
     }
 }
@@ -52,12 +44,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("BloomFilter size={} bytes", bf.size());
 
     let addr = "[::1]:50051".parse()?;
-    let svc = BloomdService {
-        bloom_filter: Arc::new(RwLock::new(bf)),
-    };
-
     Server::builder()
-        .add_service(BloomdServer::new(svc))
+        .add_service(BloomdServer::new(BloomdService {
+            bloom_filter: RwLock::new(bf),
+        }))
         .serve(addr)
         .await?;
 
