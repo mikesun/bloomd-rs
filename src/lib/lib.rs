@@ -24,6 +24,7 @@ use siphasher::sip::SipHasher;
 use std::hash::{Hash, Hasher};
 
 /// Bloom filter data structure.
+#[derive(Debug)]
 pub struct BloomFilter {
     // Number of hash functions
     num_hash_functions: usize,

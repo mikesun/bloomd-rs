@@ -1,0 +1,21 @@
+syntax = "proto3";
+package bloomd;
+
+service Bloomd {
+    rpc Insert(InsertRequest) returns (InsertResponse);
+    rpc Contains(ContainsRequest) returns (ContainsResponse);
+}
+
+message InsertRequest {
+    string item = 1;
+}
+
+message InsertResponse {}
+
+message ContainsRequest {
+   string item = 1;
+}
+
+message ContainsResponse {
+    bool contains_item = 1;
+}
