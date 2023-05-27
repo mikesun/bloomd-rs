@@ -1,3 +1,5 @@
+https://github.com/mikesun/bloomd-rs/actions/workflows/rust.yml/badge.svg
+
 # bloomd
 
 Wrote a simple Bloom filter library and gRPC service to learn some Rust and tonic.
