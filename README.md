@@ -1,4 +1,4 @@
-https://github.com/mikesun/bloomd-rs/actions/workflows/rust.yml/badge.svg
+![Build Status](https://github.com/mikesun/bloomd-rs/actions/workflows/rust.yml/badge.svg)
 
 # bloomd
 
